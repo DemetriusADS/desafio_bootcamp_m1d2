@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { FiThumbsUp } from 'react-icons/fi';
+import {uuid} from 'uuidv4';
 import api from './services/api';
 
 import "./styles.css";
@@ -53,7 +54,7 @@ function App() {
               <div className="container-inner">
                 <h3>Titulo: {repository.title}</h3>
                 <h3>Url: <a href={repository.url}>{repository.url}</a></h3>
-                <h3>Techs: {repository.techs.map(techs=>`#${techs} `)}</h3>
+                <h3>Techs: {repository.techs.map(techs=><span key={uuid()} className="badgeTechs">{techs}</span>)}</h3>
                 <div className="likes">
                   <button className="likeButton" onClick={()=>handleLikesRepository(repository.id)}>
                     <FiThumbsUp size={15}/>
