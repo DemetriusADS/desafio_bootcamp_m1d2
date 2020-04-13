@@ -5,21 +5,34 @@
 }
 
 body {
+  background: #000;
+  color: rgba(255, 255, 227, 0.993);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 14px;
 }
 
-div {
-  width: 100%;
-  margin: 20px;
+
+div.container{
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  flex-direction: row-reverse;
+
+  max-width: 1000px;
+
+  margin: 0 auto
+}
+div.container>ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
 }
 
 div li {
-  display: flex;
-  align-items: center;
-}
-
-div li + li {
-  margin-top: 15px;
+  list-style: none;
 }
 
 button {
@@ -37,3 +50,55 @@ div li button {
   margin: 0 15px;
   background: #ca4949;
 }
+
+div.container-inner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  width: 400px;
+  height: 280px;
+  background: #1d1c1c;
+  
+  border-radius: 33px;
+  
+  padding: 30px;
+  margin: 15px;
+
+  transition: all 0.3s;
+}
+div.container-inner a{
+  color: rgba(255, 255, 227, 0.993);
+  text-decoration: none;
+}
+div.container-inner:hover{
+  transform: scale(1.03);
+  box-shadow: 0px 0px 10px 7px  #3b3a3a;
+}
+div.container-inner h3{
+  margin: 5px auto;
+}
+div.container-inner button{
+  align-self: center;
+  margin-top: 25px;
+}
+div.container-inner div.likes{
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+div.container-inner span{
+  display: inline;
+}
+div.container-inner button.likeButton{
+  display: inline;
+  background: none;
+  margin: 0;
+
+  transition: color 0.5s;
+}
+div.container-inner button.likeButton:hover{
+  color: rgba(10, 103, 241, 0.856);
+}
+
